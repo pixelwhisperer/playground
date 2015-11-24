@@ -1,0 +1,328 @@
+$primary-color: #130C18;
+$primary-text-color : #4D3DA4;
+$primary-text-color-hover: #5E48DD;
+$secondary-text-color: #B3328C;
+$secondary-text-color-hover: #E433AF;
+
+$marvel-red: #F11E22;
+$white: #FFF;
+$disabled-color: #18282D;
+$disabled-color-hover: #0C1315;
+
+@font-face {
+  font-family: 'comic-font';
+  src: url('../fonts/Action_Man.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+dl, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: $primary-color;
+  color: $primary-text-color;
+
+  * {
+    text-decoration: none;
+  }
+
+  a {
+    display: block;
+    color: $secondary-text-color;
+  }
+}
+
+.dropdown.disabled {
+  background-color: $disabled-color;
+
+  &:hover {
+    background-color: $disabled-color-hover;
+  }
+}
+
+// Header
+
+.logo {
+  text-align: center;
+
+  a {
+    font-family: 'comic-font';
+    color: $marvel-red;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 37px;
+    font-weight: 600;
+    letter-spacing: -4px;
+  }
+
+  a:hover {
+    color: $marvel-red;
+  }
+
+  span {
+    background: $white;
+    padding: 6px 8px 0 4px;
+  }
+
+  img {
+    width: 100px;
+    margin-right: 4px;
+    margin-top: 0px;
+  }
+}
+
+.nav {
+
+  text-align: left;
+  padding-left: 0.83em;
+
+  ul {
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 16px 16px 0;
+  }
+
+  a {
+    padding: 12px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .quit-btn {
+    float: right;
+  }
+}
+
+// Main
+
+.score-board {
+
+}
+
+main,
+aside {
+  overflow-y: auto;
+}
+
+
+.game-settings {
+
+  .difficulty-title {
+    width: 38%;
+    display: inline-block;
+  }
+
+  .difficulty.dropdown {
+    line-height: 16px;
+    height: 50px;
+    width: 60%;
+    display: inline-block;
+    padding: 8px;
+  }
+}
+
+.table-view li {
+  display: inline-block;
+  margin: 8px;
+  width: 60px;
+  height: 60px;
+  text-indent: -10000px;
+  cursor: pointer;
+
+  a {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//stage the tile images
+@for $i from 1 through 50 {
+  .pair_#{$i} {
+    background-image: url('../img/superheroes/pair_'#{$i}'.gif');
+    background-repeat: no-repeat;
+    background-position: -4px -3px;
+  }
+}
+
+//stage the hiding of these images
+@for $i from 0 through 50 {
+  .tile_#{$i} {
+    background-image: url('../img/marvel-shield.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+aside.large-8 {
+  height: auto;
+  margin-bottom: 10px;
+}
+
+// .pair_1 {
+//   background: url(/assets/img/act_01.png);
+//   text-indent: -10000px;
+// }
+
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .table-view li {
+    width: 49px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  main.Normal {
+    .table-view li {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  main.Tough {
+    .table-view li {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  main,
+  aside {
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  main.Normal .table-view li {
+    width: 36px;
+    height: 36px;
+  }
+
+ main.Tough .table-view li {
+    width: 27px;
+    height: 27px;
+  }
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  main.Normal .table-view li {
+    width: 46px;
+    height: 46px;
+  }
+
+  main.Tough .table-view li {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+}

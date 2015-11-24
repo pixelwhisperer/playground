@@ -1,7 +1,7 @@
 /*!
  * matching-game
- * 
- * 
+ *
+ *
  * @author Steve Yawan
  * @version 1.0.0
  * Copyright 2015. ISC licensed.
@@ -96,9 +96,9 @@ $( document ).ready(function() {
 
       for( var i = 0; i <= (numPairs*2) ; i++ ) {
         if($('.tile_'+i).hasClass('matched')) {
-          //$('.tile_'+i).css('background-image','url("assets/img/superheroes/pair_'+i+'.gif")');
+          //$('.tile_'+i).css('background-image','url("assets/img/superheroes/pair_'+i+'.svg")');
           matchedPair = $('.tile_'+i).attr("class").match(/(pair_.*?)(?:\s+|$)/)[1];
-          $('.tile_'+i).css('background-image','url("assets/img/superheroes/'+matchedPair+'.gif")');
+          $('.tile_'+i).css('background-image','url("assets/img/superheroes/'+matchedPair+'.svg")');
           $('.tile_'+i).removeClass('active');
         }
       }
@@ -110,7 +110,7 @@ $( document ).ready(function() {
       for( var i = 0; i <= (numPairs*2) ; i++ ) {
         if($('.tile_'+i).hasClass('matched')) {
           matchedPair = $('.tile_'+i).attr("class").match(/(pair_.*?)(?:\s+|$)/)[1];
-          $('.tile_'+i).css('background-image','url("assets/img/superheroes/'+matchedPair+'.gif")');
+          $('.tile_'+i).css('background-image','url("assets/img/superheroes/'+matchedPair+'.svg")');
           $('.tile').removeClass('active');
         }else {
            $('.tile_'+i).animate({opacity: 0}, 'slow', function() {
@@ -128,7 +128,7 @@ $( document ).ready(function() {
       tilesMatched = 0;
       for( var i = 0; i <= (numPairs*2) ; i++ ) {
         if($('.tile_'+i).hasClass('matched')) {
-          //$('.tile_'+i).css('background-image','url("assets/img/superheroes/pair_'+i+'.gif")');
+          //$('.tile_'+i).css('background-image','url("assets/img/superheroes/pair_'+i+'.svg")');
           tilesMatched +=1;
           tileMatchesDisplay.html('<span class="number-of-matches"> '+(tilesMatched/2)+'</span>');
         }
@@ -137,7 +137,7 @@ $( document ).ready(function() {
 
     function revealTiles(){
       for( var i = 0; i <= (numPairs*2) ; i++ ) {
-        $('.pair_'+i).css('background-image','url("assets/img/superheroes/pair_'+i+'.gif")');
+        $('.pair_'+i).css('background-image','url("assets/img/superheroes/pair_'+i+'.svg")');
       }
     }
 
@@ -236,7 +236,7 @@ $( document ).ready(function() {
     activeTiles += 1;
 
     var pairName = $(this).attr("class").match(/(pair_.*?)(?:\s+|$)/)[1];
-    $(this).css('background-image','url("assets/img/superheroes/'+pairName+'.gif")');
+    $(this).css('background-image','url("assets/img/superheroes/'+pairName+'.svg")');
 
     tilesClicked = tileCounterDisplay.data('moves');
 
